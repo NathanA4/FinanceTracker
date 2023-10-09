@@ -10,6 +10,7 @@ const db = async() => {
     } catch (error) {
         console.log('Connection Error to DB:', error.message);
     }
+
 }
 
 module.exports = { db }
