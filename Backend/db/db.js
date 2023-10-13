@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 require('dotenv').config({ path: './env/.env' });
 
@@ -12,5 +12,4 @@ const db = async() => {
     }
 
 }
-
 module.exports = { db }

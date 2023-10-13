@@ -3,13 +3,7 @@ const IncomeSchema = require("../models/incomemodel")
 exports.addIncome = async (req, res) => {
     const {title, amount, category, description, date} = req.body
 
-    const income = IncomeSchema({
-        title,
-        amount,
-        category,
-        description,
-        date
-    })
+    const income = IncomeSchema({title, amount, category, description, date})
     try {
         if(!title || !category || !description || !date){
             return res.status(400).json({Error: "Must fill all the fields!"})
@@ -34,12 +28,12 @@ exports.getIncomes = async (req, res) =>{
 }
 exports.deleteIncomes = async (req, res) => {
     const {id} = req.params;
-    console.log(params)
     IncomeSchema.findByIdAndDelete(id)
-        .then((income) =>{
-            res.status(200).json({Error: 'Income Deleted'})
-        })
-        .catch((err) =>{
-            res.status(500).json({Error: 'Server Error'})
-        })
+    .then((income) =>{
+        res.status(200).json({Error: 'Income Deleted'})
+    })
+    .catch((err) =>{
+        res.status(500).json({Error: 'Server Error'})
+    })
+ 
 }
