@@ -10,5 +10,5 @@ route.post('/add-expense', addExpense)
 route.get('/get-expense', getExpense);
 route.delete('/delete-expense/:id', deleteExpense);
 
-module.exports = route
+module.exports = route;
 
